@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #e5e5e5;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+header {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #1a2634, #2c3e50);
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-size: 3.2em;
+    color: #00c4ff;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.4em;
+    color: #b0b0b0;
+    font-weight: 300;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: #00c4ff;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #00c4ff, #0066ff);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #252525, #1a1a1a);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+.card h3 {
+    font-size: 1.8em;
+    color: #00c4ff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.card ul li strong {
+    color: #00c4ff;
+    font-weight: 500;
+}
+
+.card ul li ul {
+    margin-top: 6px;
+    margin-left: 25px;
+}
+
+.card ul li ul li {
+    font-size: 0.95em;
+    color: #b0b0b0;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a2634, #2c3e50);
+    border-radius: 20px;
+    margin-top: 50px;
+    color: #b0b0b0;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .card h3 {
+        font-size: 1.5em;
+    }
+
+    .card ul li {
+        font-size: 1em;
+    }
+}
