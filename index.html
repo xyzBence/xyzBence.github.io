@@ -6,21 +6,32 @@
     <title>Bence's Hardware Collection</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  
+    <nav class="navbar">
+        <ul>
+            <li><a href="#machines">Machines</a></li>
+            <li><a href="#peripherals">Peripherals</a></li>
+            <li><a href="#network">Network</a></li>
+            <li><a href="#unused">Unused Parts</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <header>
             <h1>Bence's Hardware Collection</h1>
             <p>A showcase of my PCs, laptops, servers, monitors, network devices, and spare parts.</p>
         </header>
 
-        <!-- Machines Section -->
-        <section class="section">
+ 
+        <section id="machines" class="section">
             <h2 class="section-title">Machines</h2>
             <div class="card-grid">
-                <!-- Main PC -->
-                <div class="card">
-                    <h3>Main PC</h3>
+
+                <div class="card" style="--delay: 1">
+                    <h3><i class="fas fa-desktop"></i> Main PC</h3>
                     <ul>
                         <li><strong>CPU:</strong> Intel Core i5-10400F</li>
                         <li><strong>Cooler:</strong> Deepcool LE520 White</li>
@@ -40,26 +51,44 @@
                     </ul>
                 </div>
 
-                <!-- Main Laptop -->
-                <div class="card">
-                    <h3>Main Laptop</h3>
+
+                <div class="card" style="--delay: 2">
+                    <h3><i class="fas fa-desktop"></i> Secondary PC <span class="info-icon" title="This machine is not fully completed yet"><i class="fas fa-info-circle"></i></span></h3>
+                    <ul>
+                        <li><strong>CPU:</strong> Intel Core i5-4570</li>
+                        <li><strong>Motherboard:</strong> Medion MS-7849</li>
+                        <li><strong>RAM:</strong> 16GB (2x8) DDR3 Elixir 1600MHz</li>
+                        <li><strong>PSU:</strong> 500W Chieftec</li>
+                        <li><strong>Cooler:</strong> NB-BlackSilentFan</li>
+                        <li><strong>Storage:</strong>
+                            <ul>
+                                <li>500GB Seagate 3.5" HDD</li>
+                            </ul>
+                        </li>
+                        <li><strong>Case:</strong> Zalman T6</li>
+                    </ul>
+                </div>
+
+ 
+                <div class="card" style="--delay: 3">
+                    <h3><i class="fas fa-laptop"></i> Main Laptop</h3>
                     <ul>
                         <li><strong>Model:</strong> Toshiba Satellite L850-18U</li>
                         <li><strong>CPU:</strong> Intel Core i5-3210M</li>
                         <li><strong>GPU:</strong> Radeon HD7670M (2GB)</li>
-                        <li><strong>RAM:</strong> 16GB (2x8) DDR3 SK hynix</li>
+                        <li><strong>RAM:</strong> 16GB (2x8) DDR3 Samsung</li>
                         <li><strong>Storage:</strong>
                             <ul>
-                                <li>512GB Apacer SATA3 SSD</li>
+                                <li>512GB ADATA SATA3 SSD</li>
                                 <li>500GB Seagate HDD</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Second Laptop -->
-                <div class="card">
-                    <h3>Second Laptop</h3>
+
+                <div class="card" style="--delay: 4">
+                    <h3><i class="fas fa-laptop"></i> Second Laptop</h3>
                     <ul>
                         <li><strong>Model:</strong> Lenovo Ideapad Y570</li>
                         <li><strong>CPU:</strong> Intel Core i5-2450M</li>
@@ -74,26 +103,9 @@
                     </ul>
                 </div>
 
-                <!-- Main Server -->
-                <div class="card">
-                    <h3>Main Server</h3>
-                    <ul>
-                        <li><strong>Model:</strong> HP ProLiant DL380 G6</li>
-                        <li><strong>CPU:</strong> 2x Intel Xeon X5670</li>
-                        <li><strong>GPU:</strong> AMD ATI ES1000</li>
-                        <li><strong>RAM:</strong> 44GB DDR3 (44224MiB)</li>
-                        <li><strong>Storage:</strong>
-                            <ul>
-                                <li>240GB HyperX Kingston Fury SATA3 SSD</li>
-                                <li>4x500GB HDD RAID 5 (1.5TB usable storage)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Backup Server / Mini PC -->
-                <div class="card">
-                    <h3>Backup Server / Mini PC</h3>
+                <div class="card" style="--delay: 5">
+                    <h3><i class="fas fa-server"></i> Backup Server / Mini PC</h3>
                     <ul>
                         <li><strong>Model:</strong> Dell Optiplex 3050 Micro</li>
                         <li><strong>CPU:</strong> Intel Core i5-7500T</li>
@@ -105,16 +117,37 @@
                         </li>
                     </ul>
                 </div>
+
+
+                <div class="card highlighted" style="--delay: 6">
+                    <h3><i class="fas fa-server"></i> Main Server</h3>
+                    <ul>
+                        <li><strong>Model:</strong> HP ProLiant DL380 G6</li>
+                        <li><strong>CPU:</strong> 2x Intel Xeon X5670</li>
+                        <li><strong>GPU:</strong> AMD ATI ES1000</li>
+                        <li><strong>RAM:</strong> 44GB DDR3 (44224MiB)</li>
+                        <li><strong>Storage:</strong>
+                            <ul>
+                                <li>240GB HyperX Kingston Fury SATA3 SSD</li>
+                                <li>4x500GB HDD RAID 5 (2x WD Black, 2x Toshiba) - 1.5TB usable storage</li>
+                                <li>2x500GB Seagate Momentus RAID 0 - 1TB usable storage</li>
+                                <li>1x Dell SAS 500GB 7200RPM RAID 0</li>
+                            </ul>
+                        </li>
+                        <li><strong>RAID Controller:</strong> HP P410i</li>
+                        <li><strong>PSU:</strong> HP 2x460W Platinum</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Peripherals Section -->
-        <section class="section">
+
+        <section id="peripherals" class="section">
             <h2 class="section-title">Peripherals</h2>
             <div class="card-grid">
-                <!-- Monitors -->
-                <div class="card">
-                    <h3>Monitors</h3>
+
+                <div class="card" style="--delay: 1">
+                    <h3><i class="fas fa-monitor"></i> Monitors</h3>
                     <ul>
                         <li><strong>Main Monitor:</strong> AOC 2560x1440 16:9 27 inch QHD</li>
                         <li><strong>Secondary Monitor:</strong> Samsung 1440x900</li>
@@ -122,16 +155,26 @@
                         <li><strong>TV:</strong> LG Full HD</li>
                     </ul>
                 </div>
+
+
+                <div class="card" style="--delay: 2">
+                    <h3><i class="fas fa-hdd"></i> External Storage</h3>
+                    <ul>
+                        <li><strong>Western Digital:</strong> My Passport Ultra Black 2.5 1TB USB 3.0</li>
+                        <li><strong>Kingston:</strong> 16GB Pendrive USB 3.2</li>
+                        <li><strong>Maxell:</strong> 4GB Pendrive USB 2.0</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Network Section -->
-        <section class="section">
+
+        <section id="network" class="section">
             <h2 class="section-title">Network Connections</h2>
             <div class="card-grid">
-                <!-- Network Connections -->
-                <div class="card">
-                    <h3>Internet Plans</h3>
+
+                <div class="card" style="--delay: 1">
+                    <h3><i class="fas fa-wifi"></i> Internet Plans <span class="info-icon" title="Not all of these are currently in use"><i class="fas fa-info-circle"></i></span></h3>
                     <ul>
                         <li><strong>Telekom 1000/1000:</strong> Optical Internet - 1000 Mbps Down / 1000 Mbps Up</li>
                         <li><strong>Telekom 4G:</strong> Mobile Router - 40 Mbps Up / 90 Mbps Down</li>
@@ -139,9 +182,9 @@
                     </ul>
                 </div>
 
-                <!-- Network Devices -->
-                <div class="card">
-                    <h3>Network Devices</h3>
+
+                <div class="card" style="--delay: 2">
+                    <h3><i class="fas fa-network-wired"></i> Network Devices</h3>
                     <ul>
                         <li><strong>Modems:</strong>
                             <ul>
@@ -163,12 +206,12 @@
             </div>
         </section>
 
-        <!-- Unused Parts Section -->
-        <section class="section">
+
+        <section id="unused" class="section">
             <h2 class="section-title">Unused Parts</h2>
             <div class="card-grid">
-                <div class="card">
-                    <h3>Unused Parts</h3>
+                <div class="card" style="--delay: 1">
+                    <h3><i class="fas fa-tools"></i> Unused Parts <span class="info-icon" title="These data are not exact and may change continuously"><i class="fas fa-info-circle"></i></span></h3>
                     <ul>
                         <li><strong>GPUs:</strong>
                             <ul>
