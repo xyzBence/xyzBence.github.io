@@ -9,12 +9,45 @@ body {
     background-color: #0f0f0f;
     color: #e5e5e5;
     line-height: 1.7;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%2300c4ff" fill-opacity="0.05" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-attachment: fixed;
 }
 
 .container {
     max-width: 1350px;
     margin: 0 auto;
     padding: 40px;
+    position: relative;
+}
+
+/* Navigációs Sáv */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #1a2634, #2c3e50);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-radius: 0 0 20px 20px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: #00c4ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #66d9ff;
 }
 
 header {
@@ -23,6 +56,8 @@ header {
     background: linear-gradient(135deg, #1a2634, #2c3e50);
     border-radius: 20px;
     margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
@@ -48,6 +83,7 @@ header p {
     text-align: center;
     position: relative;
     font-weight: 700;
+    animation: slideIn 0.8s ease-out;
 }
 
 .section-title::after {
@@ -74,11 +110,21 @@ header p {
     padding: 30px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: zoomIn 0.5s ease forwards;
+    animation-delay: calc(var(--delay) * 0.1s);
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.03);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), inset 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+/* Kiemelt Main Server */
+.card.highlighted {
+    background: linear-gradient(145deg, #1a2634, #2c3e50);
+    border: 2px solid #00c4ff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 196, 255, 0.3);
 }
 
 .card h3 {
@@ -86,6 +132,13 @@ header p {
     color: #00c4ff;
     margin-bottom: 20px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card h3 i {
+    font-size: 1.2em;
 }
 
 .card ul {
@@ -113,6 +166,47 @@ header p {
     color: #b0b0b0;
 }
 
+/* Info Icon és Tooltip */
+.info-icon {
+    font-size: 0.9em;
+    color: #00c4ff;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.info-icon:hover {
+    color: #66d9ff;
+}
+
+.info-icon:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    color: #e5e5e5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.info-icon:hover::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #2a2a2a;
+    z-index: 9999;
+}
+
 footer {
     text-align: center;
     padding: 30px;
@@ -122,6 +216,24 @@ footer {
     color: #b0b0b0;
     font-size: 1.1em;
     font-weight: 300;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 /* Responsive Design */
@@ -144,5 +256,10 @@ footer {
 
     .card ul li {
         font-size: 1em;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
     }
 }
