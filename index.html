@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  
+    <!-- Navigációs Sáv -->
     <nav class="navbar">
-        <ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
             <li><a href="#machines">Machines</a></li>
             <li><a href="#peripherals">Peripherals</a></li>
             <li><a href="#network">Network</a></li>
@@ -25,11 +28,11 @@
             <p>A showcase of my PCs, laptops, servers, monitors, network devices, and spare parts.</p>
         </header>
 
- 
+        <!-- Machines Section -->
         <section id="machines" class="section">
             <h2 class="section-title">Machines</h2>
             <div class="card-grid">
-
+                <!-- Main PC -->
                 <div class="card" style="--delay: 1">
                     <h3><i class="fas fa-desktop"></i> Main PC</h3>
                     <ul>
@@ -51,7 +54,7 @@
                     </ul>
                 </div>
 
-
+                <!-- Secondary PC -->
                 <div class="card" style="--delay: 2">
                     <h3><i class="fas fa-desktop"></i> Secondary PC <span class="info-icon" title="This machine is not fully completed yet"><i class="fas fa-info-circle"></i></span></h3>
                     <ul>
@@ -69,7 +72,7 @@
                     </ul>
                 </div>
 
- 
+                <!-- Main Laptop -->
                 <div class="card" style="--delay: 3">
                     <h3><i class="fas fa-laptop"></i> Main Laptop</h3>
                     <ul>
@@ -86,7 +89,7 @@
                     </ul>
                 </div>
 
-
+                <!-- Second Laptop -->
                 <div class="card" style="--delay: 4">
                     <h3><i class="fas fa-laptop"></i> Second Laptop</h3>
                     <ul>
@@ -103,7 +106,7 @@
                     </ul>
                 </div>
 
-
+                <!-- Backup Server / Mini PC -->
                 <div class="card" style="--delay: 5">
                     <h3><i class="fas fa-server"></i> Backup Server / Mini PC</h3>
                     <ul>
@@ -118,7 +121,7 @@
                     </ul>
                 </div>
 
-
+                <!-- Main Server -->
                 <div class="card highlighted" style="--delay: 6">
                     <h3><i class="fas fa-server"></i> Main Server</h3>
                     <ul>
@@ -141,11 +144,11 @@
             </div>
         </section>
 
-
+        <!-- Peripherals Section -->
         <section id="peripherals" class="section">
             <h2 class="section-title">Peripherals</h2>
             <div class="card-grid">
-
+                <!-- Monitors -->
                 <div class="card" style="--delay: 1">
                     <h3><i class="fas fa-monitor"></i> Monitors</h3>
                     <ul>
@@ -156,7 +159,7 @@
                     </ul>
                 </div>
 
-
+                <!-- External Storage -->
                 <div class="card" style="--delay: 2">
                     <h3><i class="fas fa-hdd"></i> External Storage</h3>
                     <ul>
@@ -168,11 +171,11 @@
             </div>
         </section>
 
-
+        <!-- Network Section -->
         <section id="network" class="section">
             <h2 class="section-title">Network Connections</h2>
             <div class="card-grid">
-
+                <!-- Network Connections -->
                 <div class="card" style="--delay: 1">
                     <h3><i class="fas fa-wifi"></i> Internet Plans <span class="info-icon" title="Not all of these are currently in use"><i class="fas fa-info-circle"></i></span></h3>
                     <ul>
@@ -182,7 +185,7 @@
                     </ul>
                 </div>
 
-
+                <!-- Network Devices -->
                 <div class="card" style="--delay: 2">
                     <h3><i class="fas fa-network-wired"></i> Network Devices</h3>
                     <ul>
@@ -206,7 +209,7 @@
             </div>
         </section>
 
-
+        <!-- Unused Parts Section -->
         <section id="unused" class="section">
             <h2 class="section-title">Unused Parts</h2>
             <div class="card-grid">
@@ -262,5 +265,15 @@
             <p>Created by Bence | 2025</p>
         </footer>
     </div>
+
+    <script>
+        // Hamburger menü toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
