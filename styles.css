@@ -16,8 +16,7 @@ body {
 .container {
     max-width: 1350px;
     margin: 0 auto;
-    padding: 40px;
-    position: relative;
+    padding: 20px;
 }
 
 /* Navigációs Sáv */
@@ -25,20 +24,27 @@ body {
     position: sticky;
     top: 0;
     background: linear-gradient(135deg, #1a2634, #2c3e50);
-    padding: 15px 0;
+    padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     border-radius: 0 0 20px 20px;
 }
 
-.navbar ul {
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    color: #00c4ff;
+    cursor: pointer;
+}
+
+.nav-links {
     display: flex;
     justify-content: center;
     gap: 30px;
     list-style: none;
 }
 
-.navbar ul li a {
+.nav-links li a {
     color: #00c4ff;
     text-decoration: none;
     font-weight: 500;
@@ -46,40 +52,40 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.nav-links li a:hover {
     color: #66d9ff;
 }
 
 header {
     text-align: center;
-    padding: 60px 0;
+    padding: 40px 20px;
     background: linear-gradient(135deg, #1a2634, #2c3e50);
     border-radius: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
 }
 
 header h1 {
-    font-size: 3.2em;
+    font-size: 2.5em;
     color: #00c4ff;
     font-weight: 700;
 }
 
 header p {
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #b0b0b0;
     font-weight: 300;
 }
 
 .section {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-title {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #00c4ff;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center;
     position: relative;
     font-weight: 700;
@@ -88,8 +94,8 @@ header p {
 
 .section-title::after {
     content: '';
-    width: 100px;
-    height: 5px;
+    width: 80px;
+    height: 4px;
     background: linear-gradient(90deg, #00c4ff, #0066ff);
     position: absolute;
     bottom: -10px;
@@ -100,14 +106,14 @@ header p {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .card {
     background: linear-gradient(145deg, #252525, #1a1a1a);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
@@ -128,9 +134,9 @@ header p {
 }
 
 .card h3 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: #00c4ff;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -146,8 +152,8 @@ header p {
 }
 
 .card ul li {
-    margin-bottom: 12px;
-    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-size: 1em;
     font-weight: 300;
 }
 
@@ -157,8 +163,8 @@ header p {
 }
 
 .card ul li ul {
-    margin-top: 6px;
-    margin-left: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 .card ul li ul li {
@@ -209,12 +215,12 @@ header p {
 
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(135deg, #1a2634, #2c3e50);
     border-radius: 20px;
-    margin-top: 50px;
+    margin-top: 40px;
     color: #b0b0b0;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 300;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     animation: fadeIn 1s ease-in-out;
@@ -236,30 +242,131 @@ footer {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* Reszponzív Dizájn */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
     header h1 {
-        font-size: 2.5em;
-    }
-
-    header p {
-        font-size: 1.2em;
-    }
-
-    .section-title {
         font-size: 2em;
     }
 
-    .card h3 {
-        font-size: 1.5em;
-    }
-
-    .card ul li {
+    header p {
         font-size: 1em;
     }
 
-    .navbar ul {
-        flex-direction: column;
+    .section-title {
+        font-size: 1.8em;
+    }
+
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
         gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.4em;
+    }
+
+    .card h3 i {
+        font-size: 1em;
+    }
+
+    .card ul li {
+        font-size: 0.9em;
+    }
+
+    .card ul li ul li {
+        font-size: 0.85em;
+    }
+
+    /* Navigációs Sáv Mobil Nézetben */
+    .hamburger {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background: linear-gradient(145deg, #1a2634, #2c3e50);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 15px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        font-size: 1em;
+    }
+
+    /* Tooltip Mobil Nézetben */
+    .info-icon:hover::after,
+    .info-icon:hover::before {
+        display: none; /* Mobil nézetben a hover helyett tapintásra működik */
+    }
+
+    .info-icon:active::after {
+        content: attr(title);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        color: #e5e5e5;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 0.9em;
+        max-width: 90%;
+        z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .card h3 {
+        font-size: 1.3em;
+    }
+
+    .card ul li {
+        font-size: 0.85em;
     }
 }
